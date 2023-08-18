@@ -8,7 +8,7 @@ on:
         required: true
 
 env:
-  ternary_result: ${{ (inputs.input_value == 'apple' || inputs.input_value == 'banana' && 'AB' || 'Other' }}
+  ternary_result: ${{ (inputs.input_value == 'apple' || inputs.input_value == 'banana') && 'AB' || 'Other' }}
 
 jobs:
   print_result:
