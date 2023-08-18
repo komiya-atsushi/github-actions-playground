@@ -1,0 +1,17 @@
+name: '三項演算子的な書き方の挙動を確認する'
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_value:
+        type: string
+        required: true
+
+env:
+  ternary_result: ${{ (inputs.input_value == 'apple' || input.input_value == 'banana' && 'AB' || 'Other' }}
+
+jobs:
+  print_result:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ env.ternary_result }}
