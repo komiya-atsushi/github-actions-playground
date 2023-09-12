@@ -3,7 +3,9 @@ name: 'Triggered by other workflow'
 on:
   workflow_run:
     workflows:
-      - manual-trigger
+      # ワークフローの指定の仕方が違う？
+      # - manual-trigger
+      - 'Manual trigger'
     branches:
       - main
     types:
