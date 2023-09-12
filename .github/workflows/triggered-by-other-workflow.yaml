@@ -1,0 +1,17 @@
+name: 'Triggered by other workflow'
+
+on:
+  workflow_run:
+    workflows:
+      - manual-trigger
+    branches:
+      - main
+    types:
+      - completed
+
+jobs:
+  foo:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'hello'
