@@ -1,0 +1,10 @@
+name: 'Manual trigger'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'こんにちは'
